@@ -1,8 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { RouterProvider } from "@tanstack/react-router";
+import { router } from "@/shared/router";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <main>hi</main>
+    <RouterProvider router={router} />
   </StrictMode>,
 );
