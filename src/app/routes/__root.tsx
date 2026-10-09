@@ -1,10 +1,13 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { getIsAuth } from "@/entities/auth";
 import { router } from "@/shared/router";
+import { Providers } from "../Providers";
 
 const RootLayout = () => (
   <>
-    <Outlet />
+    <Providers>
+      <Outlet />
+    </Providers>
   </>
 );
 
