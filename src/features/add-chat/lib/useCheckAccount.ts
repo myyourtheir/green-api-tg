@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useAuthStore } from "@/entities/auth";
-import { useCheckAccountMutation } from "../api/checkAccount";
+import { useCheckAccountMutation } from "../api/useCheckAccountMutation";
 import {
   isCheckAccountResponseExist,
   isCheckAccountResponseInvalidDetailed,

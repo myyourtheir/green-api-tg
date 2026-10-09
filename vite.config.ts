@@ -20,18 +20,4 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
-  server: {
-    allowedHosts: ["4100.api.green-api.com"],
-    proxy: {
-      "/api": {
-        changeOrigin: true,
-        target: "https://4100.api.green-api.com",
-        rewrite: (path) => {
-          const newPath = path.replace(/^\/api/, "");
-          console.log({ newPath, path });
-          return newPath;
-        },
-      },
-    },
-  },
 });

@@ -1,12 +1,13 @@
-import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
+import { useGetContactInfo } from "../lib/useGetContactInfo";
 import { ChatImage } from "./ChatImage";
 
 type ChatListItemProps = {
   chatId: string;
 };
 export const ChatListItem = ({ chatId }: ChatListItemProps) => {
-  const random = useMemo(() => crypto.randomUUID(), []);
+  const { data: contact } = useGetContactInfo({ chatId });
+
   return (
     <li className="h-18">
       <Link
@@ -17,10 +18,9 @@ export const ChatListItem = ({ chatId }: ChatListItemProps) => {
           className: "bg-accent",
         }}
       >
-        <ChatImage />
+        <ChatImage chatId={chatId} />
         <div className="flex-1 w-full overflow-hidden">
-          <div className="font-semibold">{`Chat - ${chatId}`}</div>
-          <div className="truncate"> {random} last message </div>
+          <div className="font-semibold">{contact?.name}</div>
         </div>
       </Link>
     </li>

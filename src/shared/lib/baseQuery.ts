@@ -40,8 +40,8 @@ export const baseQuery = async <T>(
   const headers: Headers = new Headers();
 
   const requestUrl = new URL(
-    `/api/${url.replace(/^\//, "")}`,
-    window.location.origin,
+    `/${url.replace(/^\//, "")}`,
+    import.meta.env.VITE_API_URL ?? window.location.origin,
   );
   requestUrl.search = new URLSearchParams(
     prepareSearchParams(queryParams ?? {}),

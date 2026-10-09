@@ -5,9 +5,9 @@ import { useChatsStore } from "@/entities/chat/model/useChatsStore";
 import { Button } from "@/shared/ui/button";
 import { Field, FieldError, FieldLabel } from "@/shared/ui/field";
 import { Input } from "@/shared/ui/input";
+import { Loader } from "@/shared/ui/loader";
 import { useCheckAccount } from "../lib/useCheckAccount";
 import { newChatScheme } from "../model/newChatScheme";
-import { Loader } from "@/shared/ui/loader";
 
 type FormScheme = z.infer<typeof newChatScheme>;
 
@@ -51,6 +51,7 @@ export const NewChatForm = ({ onSubmit }: NewChatFormProps) => {
                 id="form-phoneNumber"
                 aria-invalid={fieldState.invalid}
                 autoComplete="off"
+                placeholder="+79876543210"
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>

@@ -1,11 +1,10 @@
 import { baseQuery } from "@/shared/lib/baseQuery";
 import { createMutationHook } from "@/shared/lib/createMutationHook";
+import type { SharedApiParams } from "@/shared/types";
 
 type CheckAccountParams = {
-  idInstance: string;
-  apiTokenInstance: string;
   phoneNumber: number;
-};
+} & SharedApiParams;
 
 export type CheckAccountResponseExist = {
   exist: true;

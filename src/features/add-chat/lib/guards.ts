@@ -4,7 +4,7 @@ import type {
   CheckAccountResponseInvalidDetailed,
   CheckAccountResponseInvalidSimple,
   CheckAccountResponseNotExist,
-} from "../api/checkAccount";
+} from "../api/useCheckAccountMutation";
 
 export const isCheckAccountResponseExist = (
   data: CheckAccountResponse,
