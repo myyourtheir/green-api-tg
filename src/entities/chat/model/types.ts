@@ -1,3 +1,9 @@
+export type Message = {
+  type: "outgoing" | "incoming";
+  messageId: string;
+  text: string;
+};
+
 export type ChatsStoreState = {
-  chats: string[];
+  chats: Record<string, Message[]>;
 };

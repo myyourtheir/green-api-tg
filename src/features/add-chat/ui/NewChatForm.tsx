@@ -29,7 +29,7 @@ export const NewChatForm = ({ onSubmit }: NewChatFormProps) => {
     }
 
     useChatsStore.setState((state) => {
-      state.chats.push(resp.chatId.toString());
+      state.chats[resp.chatId.toString()] = [];
     });
     onSubmit(data);
   };
