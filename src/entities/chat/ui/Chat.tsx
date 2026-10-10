@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { cn } from "cn";
+import { useReceiveMessage } from "../lib/useReceiveMessage";
 import { ChatContext } from "../model/chat-context";
 import { ChatHeader } from "./ChatHeader";
 import { InputField } from "./InputField";
@@ -12,11 +13,13 @@ type ChatProps = {
 export const Chat = ({ className, chatId }: ChatProps) => {
   const messagesRef = useRef<HTMLDivElement>(null);
 
-  if (!chatId) return null;
-
   const onMessageAdded = () => {
     messagesRef.current?.scrollTo(0, messagesRef.current?.scrollHeight);
   };
+
+  useReceiveMessage({ onMessageAdded });
+
+  if (!chatId) return null;
 
   return (
     <ChatContext.Provider value={{ chatId }}>

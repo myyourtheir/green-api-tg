@@ -8,7 +8,6 @@ const routeApi = getRouteApi("/chats");
 
 export const ChatsPage = () => {
   const { chatId } = routeApi.useSearch();
-
   return (
     <main className="flex h-screen">
       <Card
