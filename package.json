@@ -1,4 +1,5 @@
 {
+  "homepage": "https://myyourtheir.github.io/green-api-tg/",
   "name": "green-api-tg",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +8,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "tsc -b && vite build && vite preview"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
